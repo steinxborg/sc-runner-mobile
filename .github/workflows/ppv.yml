@@ -47,8 +47,8 @@ jobs:
           mkdir -p /tmp/ppv-data
           cp $OUTPUT_FILE /tmp/ppv-data/ 2>/dev/null || true
           
-          # Retry loop for push conflicts (up to 5 attempts)
-          MAX_RETRIES=5
+          # Retry loop for push conflicts (up to 10 attempts)
+          MAX_RETRIES=10
           RETRY_COUNT=0
           
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
