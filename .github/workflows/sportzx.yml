@@ -14,9 +14,9 @@ jobs:
   fetch_data:
     runs-on: ubuntu-latest
     env:
-      REPO_FOLDER: sportzx2-repo
-      SCRIPT_NAME: sportzx2.py
-      OUTPUT_FILE: sportzx2.json
+      REPO_FOLDER: sportzx-repo
+      SCRIPT_NAME: sportzx.py
+      OUTPUT_FILE: sportzx.json
     
     steps:
       - uses: actions/checkout@v5
@@ -44,8 +44,8 @@ jobs:
           
           # Run the script ONCE and save output to temp location
           python $SCRIPT_NAME
-          mkdir -p /tmp/sportzx2-data
-          cp $OUTPUT_FILE /tmp/sportzx2-data/ 2>/dev/null || true
+          mkdir -p /tmp/sportzx-data
+          cp $OUTPUT_FILE /tmp/sportzx-data/ 2>/dev/null || true
           
           # Retry loop for push conflicts (up to 10 attempts)
           MAX_RETRIES=10
@@ -61,7 +61,7 @@ jobs:
             git reset --hard origin/$DEFAULT_BRANCH
             
             # Restore files from temp location (don't re-run script)
-            cp /tmp/sportzx2-data/$OUTPUT_FILE $OUTPUT_FILE 2>/dev/null || true
+            cp /tmp/sportzx-data/$OUTPUT_FILE $OUTPUT_FILE 2>/dev/null || true
             
             # Stage the new changes
             git add $OUTPUT_FILE
