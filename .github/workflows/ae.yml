@@ -61,7 +61,7 @@ jobs:
             git reset --hard origin/$DEFAULT_BRANCH
             
             # Restore files from temp location (don't re-run script)
-            cp /tmp/ax-data/$OUTPUT_FILE $OUTPUT_FILE 2>/dev/null || true
+            cp /tmp/ae-data/$OUTPUT_FILE $OUTPUT_FILE 2>/dev/null || true
             
             # Stage the new changes
             git add $OUTPUT_FILE
