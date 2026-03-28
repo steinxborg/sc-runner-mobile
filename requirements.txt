@@ -8,4 +8,4 @@ Faker
 python-dateutil
 rapidfuzz
 httpx[http2]
-bbpb==1.4.2
+bbpb
