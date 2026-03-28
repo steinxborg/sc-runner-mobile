@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPO_FOLDER: rbtv-repo
-      SCRIPT_NAME: rbtv2.py
-      OUTPUT_FILE: rbtv2.json
+      SCRIPT_NAME: rbtv3.py
+      OUTPUT_FILE: rbtv3.json
     
     steps:
       - uses: actions/checkout@v5
